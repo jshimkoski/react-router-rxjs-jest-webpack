@@ -1,13 +1,17 @@
 {
-    "compilerOptions": {
-        "target": "ES6",
-        "jsx": "react",
-        "outDir": "dist",
-        "removeComments": true,
-        "sourceMap": true
-    },
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES6",
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "routes/*": ["./src/routes/*"],
+      "components/*": ["./src/shared/components/*"],
+      "stores/*": ["./src/shared/stores/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

@@ -1,17 +1,17 @@
-module NameStore {
+class NameStore {
 
-  export var name: string;
+  name;
 
-  export function setName(name: string): void {
+  setName(name) {
     this.name = name;
     console.log("NameService setName: ", this.name);
   }
 
-  export function getName(): string {
+  getName() {
     console.log("NameService getName: ", this.name);
     return this.name;
   }
 
 }
 
-export default NameStore;
+export let nameStore = new NameStore();

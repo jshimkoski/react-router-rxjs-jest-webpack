@@ -3,16 +3,18 @@ var path = require('path');
 
 module.exports = {
 
-  entry: "./src/index.ts",
+  entry: "./src/index.jsx",
 
   output: {
     path: 'dist',
     filename: 'index_bundle.js'
   },
 
-  plugins: [new HtmlWebpackPlugin({
-    title: 'Smilejs'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.tmpl.html")
+    })
+  ],
 
   devServer: {inline: true },
 
@@ -26,13 +28,16 @@ module.exports = {
     modulesDirectories: ["web_modules", "node_modules", "routes", "components", "stores"],
 
     // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+    extensions: ["", ".webpack.js", ".web.js", ".jsx", ".js"]
   },
 
   module: {
     loaders: [
       // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-      { test: /\.tsx?$/, loader: "ts-loader" }
+      {
+        test: /\.jsx?$/,
+        loader: 'babel'
+      },
     ],
 
     preLoaders: [

@@ -17,7 +17,7 @@ module.exports = {
 
   resolve: {
 
-    root: [path.resolve(__dirname), path.resolve(__dirname, "src")],
+    root: [path.resolve(__dirname, "src")],
 
     modulesDirectories: ["web_modules", "node_modules", "routes", "components", "states"],
 

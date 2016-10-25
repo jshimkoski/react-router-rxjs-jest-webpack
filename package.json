@@ -1,0 +1,21 @@
+{
+  "name": "smilejs",
+  "version": "1.0.0",
+  "description": "A barebones UI framework",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Shimkoski <jshimkoski@me.com> (http://jasonshimmy.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^6.0.45",
+    "html-webpack-plugin": "^2.24.0",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}

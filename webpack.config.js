@@ -10,12 +10,6 @@ module.exports = {
     filename: 'index_bundle.js'
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.tmpl.html")
-    })
-  ],
-
   devServer: {inline: true },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -33,12 +27,19 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, loader: 'babel' },
-      { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader" }
+      { test: /\.s?css$/, loader: "style-loader?singleton!css-loader!sass-loader" }
     ],
 
     preLoaders: [
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
       { test: /\.js$/, loader: "source-map-loader" }
     ]
-  }
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.tmpl.html")
+    })
+  ]
+
 };

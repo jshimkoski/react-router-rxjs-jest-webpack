@@ -6,10 +6,12 @@ require('./nav.scss');
 export default class Nav extends React.Component {
   render() {
     return (
-      <ul className="nav">
-        <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
-        <li><IndexLink to="/about" activeClassName="active">About</IndexLink></li>
-      </ul>
+      <nav className="nav">
+        <ul>
+          <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+          <li><IndexLink to="/about" activeClassName="active">About</IndexLink></li>
+        </ul>
+      </nav>
     )
   }
 }

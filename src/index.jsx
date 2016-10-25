@@ -1,16 +1,12 @@
 import React from 'react';
 import {render} from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, hashHistory } from 'react-router'
 
-import Home from 'routes/home/home.route';
-import About from 'routes/about/about.route';
+import routes from 'routes/routes';
 
 const root = document.createElement('div');
 document.body.appendChild(root);
 
 render((
-  <Router history={hashHistory}>
-    <Route path="/" component={Home}/>
-    <Route path="/about" component={About}/>
-  </Router>
+  <Router routes={routes} history={hashHistory}/>
 ), root);

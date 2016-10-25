@@ -4,11 +4,9 @@ import Nav from 'components/nav/nav.component';
 export default class Home extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Home</h1>
-        <Nav></Nav>
-        <Nav></Nav>
-      </div>
+      <section className="home">
+        <h2>Home</h2>
+      </section>
     )
   }
 }

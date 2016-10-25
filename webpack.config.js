@@ -23,7 +23,7 @@ module.exports = {
 
     root: [path.resolve(__dirname, "src"), path.resolve(__dirname, "src", "shared")],
 
-    modulesDirectories: ["web_modules", "node_modules", "routes", "components", "services"],
+    modulesDirectories: ["web_modules", "node_modules", "routes", "components", "stores"],
 
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]

@@ -25,11 +25,12 @@
     "types": [
       "node"
     ],
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "routes/*": ["./src/routes/*"],
       "components/*": ["./src/shared/components/*"],
-      "services/*": ["./src/shared/services/*"]
+      "stores/*": ["./src/shared/stores/*"]
     }
   },
   "exclude": [

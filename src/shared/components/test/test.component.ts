@@ -1,4 +1,4 @@
-import NameService from 'services/name/name.service';
+import NameService from 'stores/name/name.store';
 
 class TestComponent {
 

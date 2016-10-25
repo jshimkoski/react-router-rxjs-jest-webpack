@@ -1,4 +1,4 @@
-module NameService {
+module NameStore {
 
   export var name: string;
 
@@ -14,4 +14,4 @@ module NameService {
 
 }
 
-export default NameService;
+export default NameStore;

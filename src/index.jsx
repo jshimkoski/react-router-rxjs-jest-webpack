@@ -1,21 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router'
 
-import TestComponent from 'components/test/test.component'
-
-let test = new TestComponent();
-test.setName("test name");
-
-let test2 = new TestComponent();
-test2.getName();
-
-test2.setName("test 2 name");
-test.getName();
+import Home from 'routes/home/home.route';
+import About from 'routes/about/about.route';
 
 const root = document.createElement('div');
 document.body.appendChild(root);
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  root
-);
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={Home}/>
+    <Route path="/about" component={About}/>
+  </Router>
+), root);

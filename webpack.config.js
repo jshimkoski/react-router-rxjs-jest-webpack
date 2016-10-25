@@ -27,17 +27,13 @@ module.exports = {
 
     modulesDirectories: ["web_modules", "node_modules", "routes", "components", "stores"],
 
-    // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ["", ".webpack.js", ".web.js", ".jsx", ".js"]
   },
 
   module: {
     loaders: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-      {
-        test: /\.jsx?$/,
-        loader: 'babel'
-      },
+      { test: /\.jsx?$/, loader: 'babel' },
+      { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader" }
     ],
 
     preLoaders: [

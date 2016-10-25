@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Nav from 'components/nav/nav.component';
 import JsonResult from 'components/jsonResult/jsonResult.component'
 
 import Example from 'states/example/example.state';
 
-export default class About extends React.Component {
+export default class About extends Component {
 
   handleGetJSON() {
     return Example.getJSON();

@@ -1,19 +1,32 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
 
-  entry: "./src/index.jsx",
+  devServer: {
+    contentBase: path.join(__dirname, 'dev'),
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    port: 8080,
+    progress: true,
+    stats: 'errors-only'
+  },
+
+  devtool: "source-map",
+
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './src/index.jsx'
+  ],
 
   output: {
     path: 'dist',
     filename: 'index_bundle.js'
   },
-
-  devServer: {inline: true },
-
-  // Enable sourcemaps for debugging webpack's output.
-  devtool: "source-map",
 
   resolve: {
 
@@ -38,8 +51,10 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
+      inject: true,
       template: path.resolve(__dirname, "src", "index.tmpl.html")
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
 
 };

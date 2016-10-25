@@ -4,8 +4,9 @@
   "description": "A barebones UI framework",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist/"
   },
   "author": "Jason Shimkoski <jshimkoski@me.com> (http://jasonshimmy.com)",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "css-loader": "^0.25.0",
     "html-webpack-plugin": "^2.24.0",
     "node-sass": "^3.10.1",
+    "react-hot-loader": "^3.0.0-beta.4",
     "sass-loader": "^4.0.2",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",

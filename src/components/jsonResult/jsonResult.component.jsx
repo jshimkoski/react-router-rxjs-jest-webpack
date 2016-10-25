@@ -9,7 +9,7 @@ export default class JsonResult extends Component {
   render() {
     return (
       <div>
-      {this.handleProps()}
+        {this.handleProps()}
       </div>
     )
   }

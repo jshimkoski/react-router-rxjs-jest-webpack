@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <main className="app">
         <Header></Header>
-        {this.props.children}
+        {React.cloneElement(this.props.children, { ...this.state })}
       </main>
     )
   }

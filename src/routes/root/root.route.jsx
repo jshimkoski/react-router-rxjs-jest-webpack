@@ -3,7 +3,7 @@ import Header from 'components/header/header.component';
 
 import State from 'states/states';
 
-export default class App extends Component {
+class Root extends Component {
 
   componentDidMount() {
     State.subject.subscribe(appState => {
@@ -21,3 +21,5 @@ export default class App extends Component {
   }
 
 }
+
+export default Root;

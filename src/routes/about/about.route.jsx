@@ -4,20 +4,16 @@ import JsonResult from 'components/jsonResult/jsonResult.component'
 
 import Example from 'states/example/example.state';
 
-export default class About extends Component {
+const About = (props) => {
+  const handleGetJSON = () => { Example.getJSON(); };
 
-  handleGetJSON() {
-    return Example.getJSON();
-  }
+  return (
+    <section className="about">
+      <h2>About</h2>
+      <button onClick={handleGetJSON}>Test</button>
+      <JsonResult {...props} />
+    </section>
+  );
+};
 
-  render() {
-    return (
-      <section className="about">
-        <h2>About</h2>
-        <button onClick={this.handleGetJSON}>Test</button>
-        <h3>Results: </h3>
-        <JsonResult {...this.props} />
-      </section>
-    )
-  }
-}
+export default About;

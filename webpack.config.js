@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const HappyPack = require('happypack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
@@ -7,7 +8,7 @@ module.exports = {
   cache: true,
 
   devServer: {
-    contentBase: path.join(__dirname, 'dev'),
+    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     hot: true,
     inline: true,
@@ -16,7 +17,7 @@ module.exports = {
     stats: 'errors-only'
   },
 
-  devtool: "source-map",
+  devtool: "eval-source-map",
 
   entry: [
     'react-hot-loader/patch',
@@ -43,18 +44,14 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel',
+        loaders: ['happypack/loader?id=jsx'],
         include: [
           path.join(__dirname, "src")
-        ],
-        query: {
-          compact: false,
-          cacheDirectory:true
-        }
+        ]
       },
       {
         test: /\.s?css$/,
-        loader: "style-loader?singleton!css-loader!sass-loader",
+        loaders: ['happypack/loader?id=style'],
         include: [
           path.join(__dirname, "src")
         ]
@@ -66,7 +63,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.tmpl.html")
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HappyPack({
+      id: 'jsx',
+      loaders: [ 'babel?compact=false&cacheDirectory=true' ]
+    }),
+    new HappyPack({
+      id: 'style',
+      loaders: [ 'style-loader?singleton!css-loader!sass-loader' ]
+    })
   ]
 
 };

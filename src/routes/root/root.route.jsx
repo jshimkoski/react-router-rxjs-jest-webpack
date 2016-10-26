@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from 'components/header/header.component';
 
-import AppModel from 'states/app.model';
+import AppModel from 'states/app/app.model';
 
 class Root extends Component {
 

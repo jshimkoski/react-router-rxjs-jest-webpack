@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import Nav from 'components/nav/nav.component';
 import JsonResult from 'components/jsonResult/jsonResult.component'
 
-import Example from 'states/example/example.state';
+import JsonPlaceholderState from 'states/jsonPlaceholder/jsonPlaceholder.state';
 
 const About = props => {
 
-  const handleGetJSON = () => { Example.getJSON(); };
+  const handleGetJSON = () => { JsonPlaceholderState.getJSON(); };
 
   return (
     <section className="about">
@@ -15,6 +15,7 @@ const About = props => {
       <JsonResult {...props} />
     </section>
   );
+
 };
 
 export default About;

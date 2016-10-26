@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Nav from 'components/nav/nav.component';
 
-import Counter from 'states/counter/counter.state';
+import CounterState from 'states/counter/counter.state';
 
 const Home = props => {
 
-  const handleIncrementCounter = () => { Counter.incrementCounter(); };
-  const handleDecreaseCounter = () => { Counter.decreaseCounter(); };
+  const handleIncrementCounter = () => { CounterState.incrementCounter(); };
+  const handleDecreaseCounter = () => { CounterState.decreaseCounter(); };
 
   return (
     <section className="home">
@@ -16,6 +16,7 @@ const Home = props => {
       {props.counter}
     </section>
   );
-}
+
+};
 
 export default Home;

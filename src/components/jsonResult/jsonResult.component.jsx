@@ -22,6 +22,7 @@ const JsonResult = ({results}) => {
       </ul>
     </div>
   );
+
 };
 
 export default JsonResult;

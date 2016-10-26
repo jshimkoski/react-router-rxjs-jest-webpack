@@ -1,8 +1,8 @@
 import Rx from 'rxjs';
 import update from 'react/lib/update';
 
-import Counter from 'states/counter/counter.state';
-import Example from 'states/example/example.state';
+import CounterState from 'states/counter/counter.state';
+import JsonPlaceholderState from 'states/jsonPlaceholder/jsonPlaceholder.state';
 
 const subject = new Rx.ReplaySubject(1);
 
@@ -12,7 +12,7 @@ let state = {
   counter: 0
 };
 
-Counter.subjects.incrementCounterSubject.subscribe(()=> {
+CounterState.subjects.incrementCounterSubject.subscribe(()=> {
   state = update(state, {
     $merge: {
       counter: state.counter + 1
@@ -21,7 +21,7 @@ Counter.subjects.incrementCounterSubject.subscribe(()=> {
   subject.next(state);
 });
 
-Counter.subjects.decreaseCounterSubject.subscribe(()=> {
+CounterState.subjects.decreaseCounterSubject.subscribe(()=> {
   state = update(state, {
     $merge: {
       counter: state.counter - 1
@@ -30,7 +30,7 @@ Counter.subjects.decreaseCounterSubject.subscribe(()=> {
   subject.next(state);
 });
 
-Example.jsonSubjects.goGetJSON.subscribe( data => {
+JsonPlaceholderState.jsonSubjects.goGetJSON.subscribe( data => {
   state = update(state, {
     $merge: {
       results: data
@@ -39,7 +39,7 @@ Example.jsonSubjects.goGetJSON.subscribe( data => {
   subject.next(state);
 });
 
-Example.jsonSubjects.goPostJSON.subscribe( data => {
+JsonPlaceholderState.jsonSubjects.goPostJSON.subscribe( data => {
   state = update(state, {
     $merge: {
       postResult: data

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+
+import Helmet from "react-helmet";
 import Nav from 'components/nav/nav.component';
 
 import CounterIntent from 'states/counter/counter.intent';
@@ -12,6 +14,7 @@ const Home = props => {
 
   return (
     <section className="home">
+      <Helmet title="Home" />
       <h2>Home</h2>
       <button onClick={handleIncrementCounter}>Increase</button>
       <button onClick={handleDecreaseCounter}>Decrease</button>

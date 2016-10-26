@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-const JsonResult = ({ results }) => {
+const JsonResult = ({results}) => {
 
   const jsonData = results || [];
 

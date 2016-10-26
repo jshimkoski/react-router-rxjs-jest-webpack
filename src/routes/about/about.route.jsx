@@ -4,7 +4,7 @@ import JsonResult from 'components/jsonResult/jsonResult.component'
 
 import Example from 'states/example/example.state';
 
-const About = (props) => {
+const About = props => {
   const handleGetJSON = () => { Example.getJSON(); };
 
   return (

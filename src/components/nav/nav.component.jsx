@@ -3,7 +3,7 @@ import {IndexLink} from 'react-router';
 
 require('./nav.scss');
 
-const Nav = (props) => {
+const Nav = props => {
   return (
     <nav className="nav">
       <ul>

@@ -1,8 +1,10 @@
-const webpack = require('webpack')
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+
+  cache: true,
 
   devServer: {
     contentBase: path.join(__dirname, 'dev'),
@@ -39,19 +41,29 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, loader: 'babel' },
-      { test: /\.s?css$/, loader: "style-loader?singleton!css-loader!sass-loader" }
-    ],
-
-    preLoaders: [
-      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { test: /\.js$/, loader: "source-map-loader" }
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        include: [
+          path.join(__dirname, "src")
+        ],
+        query: {
+          compact: false,
+          cacheDirectory:true
+        }
+      },
+      {
+        test: /\.s?css$/,
+        loader: "style-loader?singleton!css-loader!sass-loader",
+        include: [
+          path.join(__dirname, "src")
+        ]
+      }
     ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      inject: true,
       template: path.resolve(__dirname, "src", "index.tmpl.html")
     }),
     new webpack.HotModuleReplacementPlugin()

@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import Nav from 'components/nav/nav.component';
 import JsonResult from 'components/jsonResult/jsonResult.component'
 
-import JsonPlaceholderState from 'states/jsonPlaceholder/jsonPlaceholder.state';
+import JsonPlaceholderIntent from 'states/jsonPlaceholder/jsonPlaceholder.intent';
 
 const About = props => {
 
-  const handleGetJSON = () => { JsonPlaceholderState.getJSON(); };
+  const handleGetJSON = () => { JsonPlaceholderIntent.getJSON(); };
 
   return (
     <section className="about">
       <h2>About</h2>
       <button onClick={handleGetJSON}>Get JSON</button>
-      <JsonResult {...props} />
+      <JsonResult {...props.JsonPlaceholderState} />
     </section>
   );
 

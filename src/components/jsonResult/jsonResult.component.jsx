@@ -12,11 +12,11 @@ const JsonResult = ({results}) => {
       </li>
     ));
 
-  const heading = () => (jsonData.length > 0) ? (<h3>Results:</h3>) : null;
+  const heading = jsonData.length > 0 ? (<h3>Results:</h3>) : null;
 
   return (
     <div>
-      {heading()}
+      {heading}
       <ul className="list-group">
         {loopResults()}
       </ul>

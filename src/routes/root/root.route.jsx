@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Header from 'components/header/header.component';
 
-import State from 'states/states';
+import AppModel from 'states/app.model';
 
 class Root extends Component {
 
   componentDidMount() {
-    State.subject.subscribe(appState => {
+    AppModel.subscribe((appState) => {
       this.setState({ ...appState });
     });
   }

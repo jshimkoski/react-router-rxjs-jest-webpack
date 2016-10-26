@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
 import Nav from 'components/nav/nav.component';
 
-import CounterState from 'states/counter/counter.state';
+import CounterIntent from 'states/counter/counter.intent';
 
 const Home = props => {
 
-  const handleIncrementCounter = () => { CounterState.incrementCounter(); };
-  const handleDecreaseCounter = () => { CounterState.decreaseCounter(); };
+  const handleIncrementCounter = () => { CounterIntent.incrementCounter(); };
+  const handleDecreaseCounter = () => { CounterIntent.decreaseCounter(); };
+
+  const counter = props.CounterState ? props.CounterState.counter : null;
 
   return (
     <section className="home">
       <h2>Home</h2>
       <button onClick={handleIncrementCounter}>Increase</button>
       <button onClick={handleDecreaseCounter}>Decrease</button>
-      {props.counter}
+      {counter}
     </section>
   );
 

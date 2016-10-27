@@ -18,10 +18,7 @@ webpackConfig.plugins.push(
       NODE_ENV: JSON.stringify('production')
     }
   }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    filename: '[name].[chunkhash].js'
-  })
+  new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[chunkhash].js')
 );
 
 module.exports = webpackConfig;

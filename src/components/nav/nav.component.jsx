@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {IndexLink} from 'react-router';
 
-require('./nav.scss');
+import './nav.scss';
 
 const Nav = props => {
   return (

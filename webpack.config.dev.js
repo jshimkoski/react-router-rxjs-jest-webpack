@@ -8,7 +8,7 @@ webpackConfig.devServer = {
   contentBase: path.join(__dirname, 'dist'),
   historyApiFallback: true,
   compress: true,
-  // hot: true,
+  hot: true,
   inline: true,
   port: 8080,
   progress: true,

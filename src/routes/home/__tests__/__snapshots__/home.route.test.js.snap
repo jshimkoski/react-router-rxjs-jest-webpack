@@ -1,0 +1,17 @@
+exports[`Home renders correctly 1`] = `
+<section
+  className="home">
+  <h2>
+    Home
+  </h2>
+  <button
+    onClick={[Function]}>
+    Increase
+  </button>
+  <button
+    onClick={[Function]}>
+    Decrease
+  </button>
+  1
+</section>
+`;

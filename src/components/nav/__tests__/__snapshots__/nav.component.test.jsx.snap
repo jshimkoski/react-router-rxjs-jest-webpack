@@ -1,0 +1,21 @@
+exports[`Nav renders correctly 1`] = `
+<nav
+  className="nav">
+  <ul>
+    <li>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        About
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

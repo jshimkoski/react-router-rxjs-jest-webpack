@@ -11,6 +11,23 @@
     "dev": "npm run clean && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js",
     "prod": "npm run build && NODE_ENV=production npm start"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "^.+\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js",
+      "^(components|routes|states).+$": "<rootDir>/__mocks__/fileMocks.js"
+    },
+    "modulePaths": [
+      "/src"
+    ],
+    "moduleDirectories": [
+      "web_modules",
+      "node_modules",
+      "routes",
+      "components",
+      "states"
+    ]
+  },
   "author": "Jason Shimkoski <jshimkoski@me.com> (http://jasonshimmy.com)",
   "license": "ISC",
   "devDependencies": {
@@ -22,10 +39,12 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
+    "enzyme": "^2.5.1",
     "happypack": "^2.2.1",
     "html-webpack-plugin": "^2.24.0",
     "jest": "^16.0.2",
     "node-sass": "^3.10.1",
+    "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.4",
     "react-test-renderer": "^15.3.2",
     "sass-loader": "^4.0.2",

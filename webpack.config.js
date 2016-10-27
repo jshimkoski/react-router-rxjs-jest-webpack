@@ -7,36 +7,9 @@ module.exports = {
 
   cache: true,
 
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    port: 8080,
-    progress: true,
-    stats: 'errors-only'
-  },
-
-  devtool: "eval-source-map",
-
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
-    './src/index.jsx'
-  ],
-
-  output: {
-    path: 'dist',
-    filename: 'index_bundle.js'
-  },
-
   resolve: {
-
     root: [path.resolve(__dirname, "src")],
-
     modulesDirectories: ["web_modules", "node_modules", "routes", "components", "states"],
-
     extensions: ["", ".webpack.js", ".web.js", ".jsx", ".js"]
   },
 
@@ -61,9 +34,13 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "index.tmpl.html")
+      template: path.resolve(__dirname, "src", "index.tmpl.html"),
+      minify: {
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true
+      }
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new HappyPack({
       id: 'jsx',
       loaders: [ 'babel?compact=false&cacheDirectory=true' ]
@@ -71,6 +48,20 @@ module.exports = {
     new HappyPack({
       id: 'style',
       loaders: [ 'style-loader?singleton!css-loader!sass-loader' ]
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      compress: {
+        warnings: false
+      },
+      options: {
+        mangle: true,
+      },
+      output: {
+        comments: false
+      }
     })
   ]
 

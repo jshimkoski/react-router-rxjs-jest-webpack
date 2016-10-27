@@ -8,14 +8,28 @@ webpackConfig.devServer = {
   contentBase: path.join(__dirname, 'dist'),
   historyApiFallback: true,
   compress: true,
-  hot: true,
+  // hot: true,
   inline: true,
   port: 8080,
   progress: true,
   noInfo: false,
   quiet: false,
   stats: {
-    colors: true
+    colors: true,
+    hash: true,
+    version: true,
+    timings: true,
+    assets: true,
+    chunks: false,
+    chunkModules: false,
+    /*modules: false,
+    reasons: false,
+    children: false,
+    source: false,
+    errors: false,
+    errorDetails: false,
+    warnings: false,
+    publicPath: false*/
   }
 };
 

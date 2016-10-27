@@ -8,9 +8,8 @@ module.exports = {
   cache: true,
 
   resolve: {
-    root: [path.resolve(__dirname, "src")],
-    modulesDirectories: ["web_modules", "node_modules", "routes", "components", "states"],
-    extensions: ["", ".webpack.js", ".web.js", ".jsx", ".js"]
+    modules: [path.resolve(__dirname, "src"), "web_modules", "node_modules", "routes", "components", "states"],
+    extensions: [".webpack.js", ".web.js", ".jsx", ".js"]
   },
 
   module: {
@@ -49,14 +48,16 @@ module.exports = {
       id: 'style',
       loaders: [ 'style-loader?singleton!css-loader!sass-loader' ]
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
       compress: { warnings: false },
       options: { mangle: true },
       output: { comments: false }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
     })
   ]
 

@@ -51,17 +51,12 @@ module.exports = {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
-      compress: {
-        warnings: false
-      },
-      options: {
-        mangle: true,
-      },
-      output: {
-        comments: false
-      }
+      compress: { warnings: false },
+      options: { mangle: true },
+      output: { comments: false }
     })
   ]
 

@@ -2,8 +2,6 @@ var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var vendorList = require('./webpack.config.vendors.js');
 
-webpackConfig.devtool = '#source-map';
-
 webpackConfig.entry = {
   app: ['./src/index.jsx'],
   vendor: vendorList

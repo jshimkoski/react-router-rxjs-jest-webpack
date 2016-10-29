@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 const path = require('path');
 
-webpackConfig.devtool = '#eval';
+webpackConfig.devtool = '#source-map';
 
 webpackConfig.devServer = {
   contentBase: path.join(__dirname, 'dist'),

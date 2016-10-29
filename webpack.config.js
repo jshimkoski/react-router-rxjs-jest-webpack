@@ -48,15 +48,6 @@ module.exports = {
     new HappyPack({
       id: 'style',
       loaders: [ 'style-loader?singleton!css-loader!sass-loader' ]
-    }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: { warnings: false },
-      options: { mangle: true },
-      output: { comments: false }
     })
   ]
 

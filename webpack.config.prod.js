@@ -18,7 +18,16 @@ webpackConfig.plugins.push(
       NODE_ENV: JSON.stringify('production')
     }
   }),
-  new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[chunkhash].js')
+  new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[chunkhash].js'),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.AggressiveMergingPlugin(),
+  new webpack.optimize.UglifyJsPlugin({
+    minimize: true,
+    compress: { warnings: false },
+    options: { mangle: true },
+    output: { comments: false }
+  })
 );
 
 module.exports = webpackConfig;

@@ -9,7 +9,6 @@ module.exports = {
 
   resolve: {
     root: [path.resolve(__dirname, "src")],
-    modulesDirectories: ["web_modules", "node_modules", "routes", "components", "states"],
     extensions: ["", ".webpack.js", ".web.js", ".jsx", ".js"]
   },
 

@@ -3,6 +3,24 @@ exports[`Header renders correctly 1`] = `
   <h1>
     Header
   </h1>
-  <test-file-stub />
+  <nav
+    className="nav">
+    <ul>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          About
+        </a>
+      </li>
+    </ul>
+  </nav>
 </header>
 `;

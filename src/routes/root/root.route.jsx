@@ -1,28 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {Route, IndexRoute, Redirect} from 'react-router'
 
-import Helmet from "react-helmet";
-import Header from 'components/header/header.component';
+import RootComponent from 'routes/root/root.component';
+import HomeComponent from 'routes/home/home.component';
+import AboutComponent from 'routes/about/about.component';
 
-import AppModel from 'states/app/app.model';
-
-class Root extends Component {
-
-  componentDidMount() {
-    AppModel.subscribe((appState) => {
-      this.setState({ ...appState });
-    });
-  }
-
-  render() {
-    return (
-      <main className="app">
-        <Helmet title="Root" titleTemplate="%s | Test App" />
-        <Header></Header>
-        {React.cloneElement(this.props.children, { ...this.state })}
-      </main>
-    )
-  }
-
-}
-
-export default Root;
+export default (
+  <Route path="/" component={RootComponent}>
+    <IndexRoute component={HomeComponent}/>
+    <Route path="/home" component={HomeComponent}/>
+    <Route path="/about" component={AboutComponent}/>
+    <Redirect from='*' to='/' />
+  </Route>
+);

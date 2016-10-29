@@ -8,13 +8,9 @@ exports[`About renders correctly 1`] = `
     onClick={[Function]}>
     Get JSON
   </button>
-  <test-file-stub
-    0={
-      Object {
-        "body": "testBody",
-        "id": 1,
-        "title": "testTitle",
-      }
-    } />
+  <div>
+    <ul
+      className="list-group" />
+  </div>
 </section>
 `;

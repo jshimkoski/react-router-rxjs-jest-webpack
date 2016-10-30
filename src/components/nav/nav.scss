@@ -1,5 +1,8 @@
 .nav {
+  user-select: none;
   a.active {
     background: yellow;
+    border: 1px solid red;
+    border-radius: 5px;
   }
 }

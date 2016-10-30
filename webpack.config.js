@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HappyPack = require('happypack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 module.exports = {
@@ -31,6 +32,10 @@ module.exports = {
     ]
   },
 
+  postcss() {
+    return [autoprefixer];
+  },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.tmpl.html"),
@@ -46,7 +51,7 @@ module.exports = {
     }),
     new HappyPack({
       id: 'style',
-      loaders: [ 'style-loader?singleton!css-loader!sass-loader' ]
+      loaders: [ 'style-loader?singleton!css-loader!postcss-loader!sass-loader' ]
     })
   ]
 

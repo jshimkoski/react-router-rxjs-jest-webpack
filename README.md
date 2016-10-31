@@ -1,5 +1,5 @@
 # react-router-rxjs-jest-webpack
-A quick starter featuring Reactjs, React Router, RxJs, Jest, and Webpack bundling
+A quick starter featuring Reactjs, React Router, RxJs, Jest, and Webpack bundling.
 
 ## NPM Commands
 

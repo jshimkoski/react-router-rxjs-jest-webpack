@@ -1,7 +1,7 @@
 {
-  "name": "smilejs",
+  "name": "react-router-rxjs-jest-webpack",
   "version": "1.0.0",
-  "description": "A barebones UI framework",
+  "description": "A quick starter featuring Reactjs, React Router, RxJs, Jest, and Webpack bundling.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",

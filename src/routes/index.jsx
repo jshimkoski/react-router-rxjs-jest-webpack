@@ -12,8 +12,8 @@ export default {
     },
 
     childRoutes: [
-      require('routes/home'),
-      require('routes/about')
+      require('./routes/home'),
+      require('./routes/about')
     ]
 
   }]

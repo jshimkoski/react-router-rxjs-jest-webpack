@@ -1,12 +1,12 @@
 import React from 'react';
-import About from '../about.component';
+import Nav from '../index';
 import renderer from 'react-test-renderer';
 
-describe('About', () => {
+describe('Nav', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <About JsonPlaceholderState={[{id: 1, title: 'testTitle', body: 'testBody'}]} />
+      <Nav/>
     ).toJSON();
   });
 

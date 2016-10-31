@@ -1,12 +1,12 @@
 import React from 'react';
-import JsonResult from '../jsonResult.component';
+import Header from '../index';
 import renderer from 'react-test-renderer';
 
-describe('JsonResult', () => {
+describe('Header', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <JsonResult results={[{id: 1, title: 'testTitle', body: 'testBody'}]} />
+      <Header/>
     ).toJSON();
   });
 

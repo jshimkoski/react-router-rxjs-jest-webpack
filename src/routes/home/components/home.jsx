@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Helmet from "react-helmet";
-import Nav from 'components/nav/nav.component';
+import Nav from 'components/nav';
 
 import CounterIntent from 'states/counter/counter.intent';
 

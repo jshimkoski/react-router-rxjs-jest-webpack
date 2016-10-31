@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import Helmet from "react-helmet";
-import Nav from 'components/nav/nav.component';
-import JsonResult from 'components/jsonResult/jsonResult.component'
+import Nav from 'components/nav';
+import JsonResult from 'components/jsonResult'
 
 import JsonPlaceholderIntent from 'states/jsonPlaceholder/jsonPlaceholder.intent';
 

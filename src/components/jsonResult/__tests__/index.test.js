@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from '../home.component';
+import JsonResult from '../index';
 import renderer from 'react-test-renderer';
 
-describe('Home', () => {
+describe('JsonResult', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <Home CounterState={{counter: 1}} />
+      <JsonResult results={[{id: 1, title: 'testTitle', body: 'testBody'}]} />
     ).toJSON();
   });
 

@@ -7,13 +7,13 @@ export default {
 
     getComponent(nextState, cb) {
       require.ensure([], function (require) {
-        cb(null, require('routes/root/root.component').default);
+        cb(null, require('./components/root').default);
       });
     },
 
     childRoutes: [
-      require('routes/home/home.route'),
-      require('routes/about/about.route')
+      require('routes/home'),
+      require('routes/about')
     ]
 
   }]

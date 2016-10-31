@@ -1,12 +1,14 @@
 import React from 'react';
-import Header from '../header.component';
+import Root from '../root';
 import renderer from 'react-test-renderer';
 
-describe('Header', () => {
+describe('Root', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <Header/>
+      <Root>
+        <div class="test-child-stub"/>
+      </Root>
     ).toJSON();
   });
 

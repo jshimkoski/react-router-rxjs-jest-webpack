@@ -1,14 +1,12 @@
 import React from 'react';
-import Root from '../Root.component';
+import Home from '../home';
 import renderer from 'react-test-renderer';
 
-describe('Root', () => {
+describe('Home', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <Root>
-        <div class="test-child-stub"/>
-      </Root>
+      <Home CounterState={{counter: 1}} />
     ).toJSON();
   });
 

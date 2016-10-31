@@ -1,0 +1,44 @@
+exports[`Root renders correctly 1`] = `
+<main
+  className="app">
+  <header>
+    <h1>
+      Header
+    </h1>
+    <nav
+      className="nav">
+      <img
+        src="test-file-stub" />
+      <ul>
+        <li>
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            onClick={[Function]}
+            style={Object {}}>
+            About
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div
+    CounterState={
+      Object {
+        "counter": 0,
+      }
+    }
+    JsonPlaceholderState={
+      Object {
+        "postResult": Array [],
+        "results": Array [],
+      }
+    }
+    class="test-child-stub" />
+</main>
+`;

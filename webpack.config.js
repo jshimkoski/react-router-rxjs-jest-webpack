@@ -29,7 +29,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|png|jpg|jpeg|gif)$/,
+        test: /\.(woff|png|jpg|jpeg|gif|svg)$/,
         loader: 'url-loader?limit=10000&name=img/[name]-[hash:6].[ext]',
         include: [
           path.join(__dirname, "src")

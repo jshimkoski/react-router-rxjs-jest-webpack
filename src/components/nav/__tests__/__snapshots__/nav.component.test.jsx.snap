@@ -1,6 +1,8 @@
 exports[`Nav renders correctly 1`] = `
 <nav
   className="nav">
+  <img
+    src="test-file-stub" />
   <ul>
     <li>
       <a

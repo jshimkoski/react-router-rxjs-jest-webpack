@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const HappyPack = require('happypack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
@@ -10,21 +9,28 @@ module.exports = {
 
   resolve: {
     root: [path.resolve(__dirname, "src")],
-    extensions: ["", ".webpack.js", ".web.js", ".jsx", ".js"]
+    extensions: ["", ".jsx", ".js"]
   },
 
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['happypack/loader?id=jsx'],
+        loader: 'babel?compact=false&cacheDirectory=true',
         include: [
           path.join(__dirname, "src")
         ]
       },
       {
         test: /\.s?css$/,
-        loaders: ['happypack/loader?id=style'],
+        loader: 'style-loader?singleton!css-loader!postcss-loader!sass-loader',
+        include: [
+          path.join(__dirname, "src")
+        ]
+      },
+      {
+        test: /\.(woff|png|jpg|jpeg|gif)$/,
+        loader: 'url-loader?limit=10000&name=img/[name]-[hash:6].[ext]',
         include: [
           path.join(__dirname, "src")
         ]
@@ -44,14 +50,6 @@ module.exports = {
         minifyCSS: true,
         minifyJS: true
       }
-    }),
-    new HappyPack({
-      id: 'jsx',
-      loaders: [ 'babel?compact=false&cacheDirectory=true' ]
-    }),
-    new HappyPack({
-      id: 'style',
-      loaders: [ 'style-loader?singleton!css-loader!postcss-loader!sass-loader' ]
     })
   ]
 

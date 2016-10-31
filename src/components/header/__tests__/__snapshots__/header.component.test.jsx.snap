@@ -5,6 +5,8 @@ exports[`Header renders correctly 1`] = `
   </h1>
   <nav
     className="nav">
+    <img
+      src="test-file-stub" />
     <ul>
       <li>
         <a

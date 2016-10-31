@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest",
-    "clean": "rm -rf dist/ && rm -rf .happypack/",
+    "clean": "rm -rf dist/",
     "build": "npm run clean && NODE_ENV=production webpack --config webpack.config.prod.js --progress -p --colors",
     "dev": "npm run clean && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --config webpack.config.dev.js",
     "prod": "npm run build && NODE_ENV=production npm start"
@@ -30,7 +30,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
     "enzyme": "^2.5.1",
-    "happypack": "^2.2.1",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.0",
     "jest": "^16.0.2",
     "node-sass": "^3.10.1",
@@ -40,6 +40,7 @@
     "react-test-renderer": "^15.3.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },

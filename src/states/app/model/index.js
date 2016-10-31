@@ -1,7 +1,7 @@
 import Rx from 'rxjs';
 
-import CounterModel from 'states/counter/counter.model';
-import JsonPlaceholderModel from 'states/jsonPlaceholder/jsonPlaceholder.model';
+import CounterModel from 'states/counter/model';
+import JsonPlaceholderModel from 'states/jsonPlaceholder/model';
 
 export default Rx.Observable.combineLatest(
   CounterModel.subject,

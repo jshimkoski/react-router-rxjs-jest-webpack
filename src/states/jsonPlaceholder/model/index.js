@@ -1,27 +1,28 @@
 import Rx from 'rxjs';
 import update from 'react/lib/update';
 
-import Intent from 'states/counter/counter.intent';
+import Intent from 'states/jsonPlaceholder/intent';
 
 const subject = new Rx.ReplaySubject(1);
 
 let state = {
-  counter: 0
+  postResult: [],
+  results: []
 };
 
-Intent.subjects.incrementCounterSubject.subscribe(()=> {
+Intent.jsonSubjects.goGetJSON.subscribe( data => {
   state = update(state, {
     $merge: {
-      counter: state.counter + 1
+      results: data
     }
   });
   subject.next(state);
 });
 
-Intent.subjects.decreaseCounterSubject.subscribe(()=> {
+Intent.jsonSubjects.goPostJSON.subscribe( data => {
   state = update(state, {
     $merge: {
-      counter: state.counter - 1
+      postResult: data
     }
   });
   subject.next(state);

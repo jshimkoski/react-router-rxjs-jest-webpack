@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Helmet from "react-helmet";
 import Nav from 'components/nav';
 
-import CounterIntent from 'states/counter/counter.intent';
+import CounterIntent from 'states/counter/intent';
 
 const Home = props => {
 

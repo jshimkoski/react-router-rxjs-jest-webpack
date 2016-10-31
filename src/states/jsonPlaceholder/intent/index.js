@@ -1,5 +1,5 @@
 import Rx from 'rxjs';
-import Api from './jsonPlaceholder.api';
+import Api from 'states/jsonPlaceholder/api';
 
 var jsonSubjects = {
   goGetJSON: new Rx.Subject(),

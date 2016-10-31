@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import Nav from 'components/nav';
 import JsonResult from 'components/jsonResult'
 
-import JsonPlaceholderIntent from 'states/jsonPlaceholder/jsonPlaceholder.intent';
+import JsonPlaceholderIntent from 'states/jsonPlaceholder/intent';
 
 const About = props => {
 

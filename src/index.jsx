@@ -5,6 +5,8 @@ import browserHistory from 'react-router/lib/browserHistory'
 
 import Routes from 'routes';
 
+import 'index.scss';
+
 const root = document.createElement('div');
 document.body.appendChild(root);
 

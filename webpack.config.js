@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        loader: 'style-loader?singleton!css-loader!postcss-loader!sass-loader',
+        loader: 'style-loader?singleton!css-loader?modules!postcss-loader!sass-loader',
         include: [
           path.join(__dirname, "src")
         ]

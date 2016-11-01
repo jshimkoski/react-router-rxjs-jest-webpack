@@ -1,0 +1,30 @@
+.nav {
+
+  user-select: none;
+
+  a {
+    padding: 0.5rem;
+    &.active {
+      background: yellow;
+      border: 0.1rem solid red;
+      border-radius: 0.5rem;
+    }
+  }
+
+  img {
+    height: 10rem;
+  }
+
+  ul {
+    width: 0.5rem;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li {
+      flex: 1;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+}

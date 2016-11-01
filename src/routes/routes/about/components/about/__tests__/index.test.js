@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from '../home';
+import About from '../index';
 import renderer from 'react-test-renderer';
 
-describe('Home', () => {
+describe('About', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <Home CounterState={{counter: 1}} />
+      <About JsonPlaceholderState={[{id: 1, title: 'testTitle', body: 'testBody'}]} />
     ).toJSON();
   });
 

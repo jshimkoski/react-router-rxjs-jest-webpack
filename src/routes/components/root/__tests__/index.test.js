@@ -1,5 +1,5 @@
 import React from 'react';
-import Root from '../root';
+import Root from '../index';
 import renderer from 'react-test-renderer';
 
 describe('Root', () => {

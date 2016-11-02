@@ -15,13 +15,6 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
-        loader: 'babel?compact=false&cacheDirectory=true',
-        include: [
-          path.join(__dirname, "src")
-        ]
-      },
-      {
         test: /\.s?css$/,
         loader: 'style-loader?singleton!css-loader?modules!postcss-loader!sass-loader',
         include: [

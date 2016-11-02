@@ -7,9 +7,9 @@ webpackConfig.devtool = '#source-map';
 webpackConfig.devServer = {
   contentBase: path.join(__dirname, 'dist'),
   historyApiFallback: true,
-  compress: true,
   hot: true,
   inline: true,
+  compress: true,
   port: 8080,
   progress: true,
   noInfo: false,
@@ -33,8 +33,17 @@ webpackConfig.devServer = {
   }
 };
 
+webpackConfig.module.loaders.push(
+  {
+    test: /\.jsx?$/,
+    loader: 'react-hot!babel?compact=false&cacheDirectory=true',
+    include: [
+      path.join(__dirname, "src")
+    ]
+  }
+);
+
 webpackConfig.entry = [
-  'react-hot-loader/patch',
   'webpack-dev-server/client?http://localhost:8080',
   'webpack/hot/only-dev-server',
   './src/index.jsx'
@@ -42,8 +51,9 @@ webpackConfig.entry = [
 
 webpackConfig.output = {
   path: 'dist',
-  filename: '[name].js'
-},
+  filename: '[name].js',
+  publicPath: 'http://localhost:8080/'
+};
 
 webpackConfig.plugins.push(
   new webpack.DefinePlugin({

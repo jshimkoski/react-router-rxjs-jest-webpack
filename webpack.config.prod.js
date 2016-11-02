@@ -1,6 +1,17 @@
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 var vendorList = require('./webpack.config.vendors.js');
+const path = require('path');
+
+webpackConfig.module.loaders.push(
+  {
+    test: /\.jsx?$/,
+    loader: 'babel?compact=false&cacheDirectory=true',
+    include: [
+      path.join(__dirname, "src")
+    ]
+  }
+);
 
 webpackConfig.entry = {
   app: ['./src/index.jsx'],

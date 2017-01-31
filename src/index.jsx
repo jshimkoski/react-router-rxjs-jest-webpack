@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import Router from 'react-router/lib/Router'
 import browserHistory from 'react-router/lib/browserHistory'
 
-import Routes from 'routes';
+import Routes from 'routes/root/root.route';
 
 import 'index.scss';
 

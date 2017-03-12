@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Route from 'react-router-dom/Route';
 
-import asyncComponent from 'async.component';
+import asyncComponent from 'components/async/async.component';
 
 import Helmet from "react-helmet";
 import Header from 'components/header/header.component';

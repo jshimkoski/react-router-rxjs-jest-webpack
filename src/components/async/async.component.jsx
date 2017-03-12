@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 // getComponent is a function that returns a promise for a component
 // It will not be called until the first mount
-export default function asyncComponent(getComponent) {
-  return class AsyncComponent extends React.Component {
-    static Component = null;
-    state = { Component: AsyncComponent.Component };
+function asyncComponent(getComponent) {
+  return class AsyncComponent extends Component {
+
+    constructor() {
+      super();
+      this.state = { Component: null };
+    }
 
     componentWillMount() {
       if (!this.state.Component) {
         getComponent().then(Component => {
-          AsyncComponent.Component = Component
           this.setState({ Component })
         })
       }
     }
+
     render() {
       const { Component } = this.state
       if (Component) {
@@ -23,4 +26,7 @@ export default function asyncComponent(getComponent) {
       return null
     }
   }
+
 }
+
+export default asyncComponent;

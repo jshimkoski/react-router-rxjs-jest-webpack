@@ -11,9 +11,8 @@ webpackConfig.module.rules.push(
         loader: 'babel-loader',
         options: {
           presets: [
-            'es2015',
-            'react',
-            'stage-0'
+            'env',
+            'react'
           ],
           plugins: []
         }

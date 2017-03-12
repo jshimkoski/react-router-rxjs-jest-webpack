@@ -1,18 +1,21 @@
 {
   "presets": [
-    ["es2015", {
-      "es2015": {
+    ["env", {
+      "targets": {
         "loose": true,
-        "modules": false
+        "modules": false,
+        "useBuiltIns": true
+        //"browsers": ["last 2 versions", "safari >= 7"]
       }
     }],
-    "react",
-    "stage-0"
+    "react"
   ],
   "plugins": [
     ["resolver", {"resolveDirs": ["src"]}],
     "syntax-dynamic-import",
-    "system-import-transformer"
+    "system-import-transformer",
+    "transform-object-rest-spread",
+    "transform-function-bind"
   ],
   "env": {
     "test": {

@@ -44,13 +44,27 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff|png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif)$/,
         use: [
           {
             loader: "url-loader",
             options: {
               limit: 10000,
               name: "img/[name]-[hash:6].[ext]"
+            }
+          }
+        ],
+        include: [
+          path.join(__dirname, "src")
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[name]-[hash:6].[ext]"
             }
           }
         ],

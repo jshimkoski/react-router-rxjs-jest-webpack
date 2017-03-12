@@ -4,8 +4,8 @@
       "targets": {
         "loose": true,
         "modules": false,
-        "useBuiltIns": true
-        //"browsers": ["last 2 versions", "safari >= 7"]
+        "useBuiltIns": true,
+        "browsers": ["last 2 versions", "> 5%", "not ie <= 8"]
       }
     }],
     "react"

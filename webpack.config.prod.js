@@ -44,7 +44,18 @@ webpackConfig.plugins.push(
   new webpack.optimize.AggressiveMergingPlugin(),
   new webpack.optimize.UglifyJsPlugin({
     options: { mangle: true },
-    output: { comments: false }
+    output: { comments: false },
+    compress: {
+      warnings: false,
+      sequences: true,
+      dead_code: true,
+      conditionals: true,
+      booleans: true,
+      unused: true,
+      if_return: true,
+      join_vars: true,
+      drop_console: true
+    }
   }),
   new webpack.LoaderOptionsPlugin({
     minimize: true

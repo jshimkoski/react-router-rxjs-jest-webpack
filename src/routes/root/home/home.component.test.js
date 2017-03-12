@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from '../nav.component';
+import Home from './home.component';
 import renderer from 'react-test-renderer';
 
-describe('Nav', () => {
+describe('Home', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <Nav/>
+      <Home CounterState={{counter: 1}} />
     ).toJSON();
   });
 

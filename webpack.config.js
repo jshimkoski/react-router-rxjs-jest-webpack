@@ -8,31 +8,57 @@ module.exports = {
   cache: true,
 
   resolve: {
-    root: [path.resolve(__dirname, "src")],
-    extensions: ["", ".jsx", ".js"]
+    modules: [
+      path.join(__dirname, "src"),
+      "node_modules"
+    ],
+    extensions: [".jsx", ".js"]
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.s?css$/,
-        loader: 'style-loader?singleton!css-loader?modules!postcss-loader!sass-loader',
+        use: [
+          {
+            loader: "style-loader",
+            options: {
+              singleton: true
+            }
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: true
+            }
+          },
+          {
+            loader: "postcss-loader"
+          },
+          {
+            loader: "sass-loader"
+          }
+        ],
         include: [
           path.join(__dirname, "src")
         ]
       },
       {
         test: /\.(woff|png|jpg|jpeg|gif|svg)$/,
-        loader: 'url-loader?limit=10000&name=img/[name]-[hash:6].[ext]',
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 10000,
+              name: "img/[name]-[hash:6].[ext]"
+            }
+          }
+        ],
         include: [
           path.join(__dirname, "src")
         ]
       }
     ]
-  },
-
-  postcss() {
-    return [autoprefixer];
   },
 
   plugins: [

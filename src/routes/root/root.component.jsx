@@ -1,9 +1,20 @@
 import React, {Component} from 'react';
+import Route from 'react-router-dom/Route';
+
+import asyncComponent from 'async.component';
 
 import Helmet from "react-helmet";
 import Header from 'components/header/header.component';
 
 import AppModel from 'states/app/app.model';
+
+const Home = asyncComponent(() =>
+  System.import('./home/home.component').then(module => module.default)
+);
+
+const About = asyncComponent(() =>
+  System.import('./about/about.component').then(module => module.default)
+);
 
 class Root extends Component {
 
@@ -14,13 +25,16 @@ class Root extends Component {
   }
 
   render() {
+
     return (
       <main className="app">
         <Helmet title="Root" titleTemplate="%s | Test App" />
-        <Header></Header>
-        {React.cloneElement(this.props.children, { ...this.state })}
+        <Header/>
+        <Route exact path="/" render={() => <Home {...this.state} />} />
+        <Route path="/about" render={() => <About {...this.state} />} />
       </main>
     )
+
   }
 
 }

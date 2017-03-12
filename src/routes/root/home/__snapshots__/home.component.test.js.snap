@@ -1,15 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Home renders correctly 1`] = `
 <section
-  className="home">
+  className="home"
+>
   <h2>
     Home
   </h2>
   <button
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Increase
   </button>
   <button
-    onClick={[Function]}>
+    onClick={[Function]}
+  >
     Decrease
   </button>
   1

@@ -1,5 +1,5 @@
 # react-router-rxjs-jest-webpack
-A quick starter featuring Reactjs, React-Router with dynamic routing, RxJs, Jest, CSS modules, and Webpack bundling.
+A quick starter featuring Reactjs, React-Router with dynamic routing, RxJs, Jest, CSS modules, and Webpack 2 bundling.
 
 ## NPM Commands
 
@@ -13,4 +13,3 @@ A quick starter featuring Reactjs, React-Router with dynamic routing, RxJs, Jest
 ## Things to Add
 
 * Improved testing
-* Upgrade to Webpack 2 for tree shaking (when it becomes stable)

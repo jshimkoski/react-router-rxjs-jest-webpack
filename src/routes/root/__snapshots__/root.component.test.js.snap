@@ -1,44 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Root renders correctly 1`] = `
 <main
-  className="app">
+  className="app"
+>
   <header>
     <h1>
       Header
     </h1>
     <nav
-      className="nav">
+      className="nav"
+    >
       <img
-        src="test-file-stub" />
+        src="test-file-stub"
+      />
       <ul>
         <li>
           <a
+            className="active "
+            href="/"
             onClick={[Function]}
-            style={Object {}}>
+            style={Object {}}
+          >
             Home
           </a>
         </li>
         <li>
           <a
+            className={undefined}
+            href="/about"
             onClick={[Function]}
-            style={Object {}}>
+            style={undefined}
+          >
             About
           </a>
         </li>
       </ul>
     </nav>
   </header>
-  <div
-    CounterState={
-      Object {
-        "counter": 0,
-      }
-    }
-    JsonPlaceholderState={
-      Object {
-        "postResult": Array [],
-        "results": Array [],
-      }
-    }
-    class="test-child-stub" />
 </main>
 `;

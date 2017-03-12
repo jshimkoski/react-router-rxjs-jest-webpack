@@ -11,7 +11,7 @@ webpackConfig.devServer = {
   inline: true,
   compress: true,
   port: 8080,
-  progress: true,
+  //progress: true,
   noInfo: false,
   quiet: false,
   stats: {
@@ -33,10 +33,25 @@ webpackConfig.devServer = {
   }
 };
 
-webpackConfig.module.loaders.push(
+webpackConfig.module.rules.push(
   {
     test: /\.jsx?$/,
-    loader: 'react-hot!babel?compact=false&cacheDirectory=true',
+    use: [
+      {
+        loader: "react-hot-loader"
+      },
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            'es2015',
+            'react',
+            'stage-0'
+          ],
+          plugins: []
+        }
+      }
+    ],
     include: [
       path.join(__dirname, "src")
     ]
@@ -50,7 +65,7 @@ webpackConfig.entry = [
 ];
 
 webpackConfig.output = {
-  path: 'dist',
+  path: '/dist',
   filename: '[name].js',
   publicPath: 'http://localhost:8080/'
 };

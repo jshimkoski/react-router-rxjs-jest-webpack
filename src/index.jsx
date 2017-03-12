@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Router from 'react-router/lib/Router'
-import browserHistory from 'react-router/lib/browserHistory'
+import BrowserRouter from 'react-router-dom/BrowserRouter';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-import Routes from 'routes/root/root.route';
+import Root from 'routes/root/root.component';
 
 import 'index.scss';
 
@@ -11,5 +11,7 @@ const root = document.createElement('div');
 document.body.appendChild(root);
 
 render((
-  <Router routes={Routes} history={browserHistory}/>
+  <BrowserRouter history={createBrowserHistory}>
+    <Root/>
+  </BrowserRouter>
 ), root);

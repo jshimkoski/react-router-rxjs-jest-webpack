@@ -3,10 +3,22 @@ var webpackConfig = require('./webpack.config.js');
 var vendorList = require('./webpack.config.vendors.js');
 const path = require('path');
 
-webpackConfig.module.loaders.push(
+webpackConfig.module.rules.push(
   {
     test: /\.jsx?$/,
-    loader: 'babel?compact=false&cacheDirectory=true',
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            'es2015',
+            'react',
+            'stage-0'
+          ],
+          plugins: []
+        }
+      }
+    ],
     include: [
       path.join(__dirname, "src")
     ]
@@ -29,15 +41,14 @@ webpackConfig.plugins.push(
       NODE_ENV: JSON.stringify('production')
     }
   }),
-  new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[chunkhash].js'),
-  new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: '[name].[chunkhash].js' }),
   new webpack.optimize.AggressiveMergingPlugin(),
   new webpack.optimize.UglifyJsPlugin({
-    minimize: true,
-    compress: { warnings: false },
     options: { mangle: true },
     output: { comments: false }
+  }),
+  new webpack.LoaderOptionsPlugin({
+    minimize: true
   })
 );
 

@@ -1,12 +1,15 @@
 import React from 'react';
-import Home from '../home.component';
+import Nav from './nav.component';
 import renderer from 'react-test-renderer';
+import { MemoryRouter } from 'react-router';
 
-describe('Home', () => {
+describe('Nav', () => {
   let component;
   beforeEach(() => {
     component = renderer.create(
-      <Home CounterState={{counter: 1}} />
+      <MemoryRouter>
+        <Nav/>
+      </MemoryRouter>
     ).toJSON();
   });
 

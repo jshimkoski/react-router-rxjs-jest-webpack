@@ -9,7 +9,11 @@
     "react",
     "stage-0"
   ],
-  "plugins": [["resolver", {"resolveDirs": ["src"]}], "syntax-dynamic-import", "system-import-transformer"],
+  "plugins": [
+    ["resolver", {"resolveDirs": ["src"]}],
+    "syntax-dynamic-import",
+    "system-import-transformer"
+  ],
   "env": {
     "test": {
       "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]

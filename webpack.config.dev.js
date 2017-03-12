@@ -11,7 +11,6 @@ webpackConfig.devServer = {
   inline: true,
   compress: true,
   port: 8080,
-  //progress: true,
   noInfo: false,
   quiet: false,
   stats: {
